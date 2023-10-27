@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/gun-devil.css">
+
+  <title>
+    Gun Devil - Chainsaw Man
+  </title>
+</head>
+<body>
+  <div class="main-div">
+    <div class="h2-div">
+      <h2>You are the Gun Devil</h2>
+    </div>
+
+    <div class="bottom-div">
+
+      <div class="button-div">
+
+        <button class="shoot-button" onclick="
+          destroyContinents();
+        ">
+          Shoot
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const population = JSON.parse(localStorage.getItem('population')) || {
+      canada: 38295492,
+      indonesia: 273843240,
+      philippines: 113939305,
+      japan: 125730290
+    };
+
+    function destroyContinents() {
+      let numberOfDeaths = {
+        canadaDeaths: 0,
+        indonesiaDeaths: 0,
+        philippinesDeaths: 0,
+        japanDeaths: 0
+      };
+
+      numberOfDeaths.canadaDeaths = randomShoot(550, 12601);
+      if ((population.canada - numberOfDeaths.canadaDeaths) > 0) {
+        population.canada -= numberOfDeaths.canadaDeaths;
+      } else {
+        population.canada = 0;
+      }
+
+      numberOfDeaths.indonesiaDeaths = randomShoot(550, 12601);
+      if ((population.indonesia - numberOfDeaths.indonesiaDeaths) > 0) {
+        population.indonesia -= numberOfDeaths.indonesiaDeaths;
+      } else {
+        population.indonesia = 0;
+      }
+
+      numberOfDeaths.philippinesDeaths = randomShoot(550, 12601);
+      if ((population.philippines - numberOfDeaths.philippinesDeaths) > 0) {
+        population.philippines -= numberOfDeaths.philippinesDeaths;
+      } else {
+        population.philippines = 0;
+      }
+
+      numberOfDeaths.japanDeaths = randomShoot(550, 12601);
+      if ((population.japan - numberOfDeaths.japanDeaths) > 0) {
+        population.japan -= numberOfDeaths.japanDeaths;
+      } else {
+        population.japan = 0;
+      }
+
+      alert(`Gun Devils Recorded Kills \nCanada - Deaths: ${numberOfDeaths.canadaDeaths}   Remaining Population: ${population.canada}\nIndonesia - Deaths: ${numberOfDeaths.indonesiaDeaths}   Remaining Population: ${population.indonesia}\nPhilippines - Deaths: ${numberOfDeaths.philippinesDeaths}   Remaining Population: ${population.philippines}\nJapan - Deaths: ${numberOfDeaths.japanDeaths}   Remaining Population: ${population.japan}`);
+      localStorage.setItem('population', JSON.stringify(population));
+    }
+
+    function randomShoot(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+      localStorage.setItem('population', JSON.stringify(population));
+    }
+  </script>
+</body>
+</html>

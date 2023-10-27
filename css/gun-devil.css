@@ -1,0 +1,58 @@
+@font-face {
+  font-family: death-dog;
+  src: url(../fonts/The\ Death\ Dog.ttf);
+}
+
+.h2-div{
+  display: flex;
+  justify-content: center;
+}
+
+h2{
+  text-align: center;
+  font-size: 33px;
+  font-family: death-dog;
+  color: rgb(65, 33, 33);
+}
+.bottom-div{
+  display: flex;
+  justify-content: space-between;
+  width:  80%;
+  margin: auto;
+  height: 60vh;
+  /* grid-template-columns: auto auto; */
+}
+.button-div{
+  flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shoot-button{
+  background-color: rgb(66, 59, 59);
+  border: solid;
+  color: rgb(255, 164, 164);
+  border-color: rgb(197, 22, 22);
+  font-family: death-dog;
+  width: 267px;
+  height: 100px;
+  font-size: 33px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 23px;
+}
+
+.shoot-button:hover{
+  background-color: rgb(216, 96, 96);
+  color: rgb(41, 31, 31);
+}
+
+.shoot-button:active{
+  background-color: rgb(163, 47, 47);
+  color: rgb(29, 20, 20);
+}
+
+body{
+  background-color: rgb(163, 163, 163);
+}
